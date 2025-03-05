@@ -1,0 +1,42 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.restaurant-card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.rating {
+    color: #f39c12;
+}
+
+.search-restaurant {
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.primary-btn {
+    border: none;
+    background-color: #0e0e0e;
+    color: #fff;
+    padding: 6px 12px;
+    margin-left: 4px;
+    border-radius: 7px;
+    &:hover {
+        background-color: #373737;
+    }
+}

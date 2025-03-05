@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Notyf CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 position-sticky top-0">
+        <div class="container">
+            <a class="navbar-brand" href="/admin">Admin Panel</a>
+            <div>
+                <a href="../addDish/index.html" class="text-white text-decoration-none btn btn-dark">Add Dishes</a>
+                <button class="btn btn-danger">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container add-restaurant-form">
+        <h3 class="text-center mb-3">Add Restaurant</h3>
+        <form>
+            <div class="mb-3">
+                <label for="restaurantName" class="form-label">Restaurant Name</label>
+                <input type="text" class="form-control" id="restaurantName" required>
+            </div>
+            <div class="mb-3">
+                <label for="restaurantDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="restaurantDescription" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="restaurantLocation" class="form-label">Location</label>
+                <input type="text" class="form-control" id="restaurantLocation" required>
+            </div>
+            <div class="mb-3">
+                <label for="restaurantRating" class="form-label">Rating</label>
+                <input type="number" class="form-control" id="restaurantRating" min="1" max="5" step="0.1" required>
+            </div>
+            <div class="mb-3">
+                <label for="restaurantImage" class="form-label">Restaurant Image</label>
+                <input type="file" class="form-control" id="restaurantImage" accept="image/*" required>
+            </div>
+            <div class="mb-3">
+                <label for="restaurantContact" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="restaurantContact" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="deliveryAvailable">
+                <label class="form-check-label" for="deliveryAvailable">Delivery Available</label>
+            </div>
+            <button type="button" onclick="onSubmitHandler()" class="btn btn-dark w-100">Add Restaurant</button>
+        </form>
+    </div>
+
+    <!-- Notyf JS -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="addRestaurant.js"></script>
+</body>
+
+</html>
