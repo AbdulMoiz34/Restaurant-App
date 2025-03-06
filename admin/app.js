@@ -5,7 +5,7 @@ const notyf = new Notyf();
 
 // check user login or not.
 const isLogin = localStorage.getItem("login");
-if (!isLogin) {
+if (!isLogin || isLogin == "false") {
     location = "/admin/login";
 }
 
@@ -92,5 +92,11 @@ function deleteRestaurant(id) {
     }
 }
 
-
+function logout() {
+    localStorage.setItem("login", false);
+    notyf.success("logout successful.");
+    setTimeout(function () {
+        location = "/admin/login";
+    }, 1000);
+}
 DisplayRestaurants();

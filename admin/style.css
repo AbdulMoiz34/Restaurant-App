@@ -21,3 +21,8 @@ body {
     cursor: pointer;
     margin: 0 5px;
 }
+
+nav a:hover{
+    text-decoration: underline !important;
+
+}

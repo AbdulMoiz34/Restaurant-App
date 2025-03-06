@@ -10,25 +10,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 position-sticky top-0 z-2">
         <div class="container">
             <a class="navbar-brand" href="#">Restaurant Finder</a>
             <div>
-                <input type="search" class="search-restaurant" name="" placeholder="Search Restaurant." id="">
-                <button class="primary-btn">Search</button>
+                <i class="fa-solid fa-bars nav-icon d-none"></i>
+                <div class="nav-items">
+                    <a href="/" class="text-white text-decoration-none me-3">Home</a>
+                    <a href="#restaurant" class="text-white text-decoration-none me-3">Restaurant</a>
+                    <a href="#reviews" class="text-white text-decoration-none me-3">Review</a>
+                    <a href="#footer" class="text-white text-decoration-none me-3">Contact</a>
+                </div>
             </div>
+
         </div>
         <div>
         </div>
     </nav>
 
     <div class="container my-5 main">
-        <h2 class="text-center mb-4">Choose Your Favorite Restaurant</h2>
-        <div class="row row-gap-5" id="restaurant-list">
-            <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up">
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <div class="swiper mySwiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"
+                        style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D')">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image: url('https://media.istockphoto.com/id/1446478827/photo/a-chef-is-cooking-in-his-restaurants-kitchen.jpg?s=612x612&w=0&k=20&c=jwKJmGErrLe2XsTWNYEEyiNicudYVA4j8jvnTiJdp58=')">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image: url('https://t3.ftcdn.net/jpg/03/11/19/38/360_F_311193887_0aXFwwXXHu4PsBAVNW1USeypg1clOH8E.jpg')">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image: url('https://as1.ftcdn.net/v2/jpg/01/27/65/58/1000_F_127655811_iv0Vf94XxAy7hneGXka6C1kaT8jAe4qC.jpg')">
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-center mb-4 mt-5" id="restaurant">Choose Your Favorite Restaurant</h2>
+            <div class="row row-gap-5 justify-content-center" id="restaurant-list">
+                <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up">
                 <div class="card restaurant-card shadow-sm">
                     <img src="restaurant2.jpg" class="card-img-top" alt="Restaurant 2">
                     <div class="card-body text-center">
@@ -45,9 +81,169 @@
                     </div>
                 </div>
             </div> -->
+            </div>
         </div>
-    </div>
+        <section class="top-rated-section mt-5">
+            <div class="container">
+                <div class="section-header mb-5">
+                    <h2 class="text-center">Top Rated Restaurant</h2>
+                </div>
+                <div class="row align-items-center">
+                    <!-- Restaurant Image Column -->
+                    <div class="col-md-7">
+                        <img src="https://as1.ftcdn.net/v2/jpg/01/27/65/58/1000_F_127655811_iv0Vf94XxAy7hneGXka6C1kaT8jAe4qC.jpg"
+                            alt="Top Rated Restaurant" class="restaurant-img rounded">
+                    </div>
+                    <!-- Restaurant Details Column -->
+                    <div class="col-md-5">
+                        <div class="top-restaurant-card">
+                            <div class="restaurant-details">
+                                <h3>La Bella Vita</h3>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="rating-number">4.5</span>
+                                </div>
+                                <p>
+                                    Experience the finest Italian cuisine at La Bella Vita. With a perfect blend of
+                                    tradition and modern flair, every dish is a masterpiece.
+                                </p>
+                                <a href="#" class="btn btn-view">View Restaurant</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Customers Say</h2>
+                    <p>Real reviews from happy diners</p>
+                </div>
+                <div class="testimonials-grid review-list">
+                    <!-- Testimonial Card 1 -->
+                    <!-- <div class="testimonial-card">
+                        <div class="d-flex align-items-center">
+                            <div class="testimonial-avatar">
+                                <img src="https://via.placeholder.com/80?text=JD" alt="John Doe">
+                            </div>
+                            <div class="ms-3 testimonial-content">
+                                <h5 class="testimonial-name">John Doe</h5>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The service is amazing, and the food is even better! I always have
+                            a great dining experience."</p>
+                    </div> -->
+                    <!-- You can add more testimonial cards here -->
+                </div>
+            </div>
+        </section>
 
+        <!-- Newsletter CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Stay Updated!</h2>
+                <p>Subscribe to our newsletter and be the first to know about exclusive deals, latest trends, and
+                    exciting updates from the restaurant world.</p>
+                <form class="cta-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white pt-5 pb-4" id="footer">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <!-- Branding Column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                        Restaurant Finder
+                    </h5>
+                    <p>
+                        Discover the best dining experiences near you. Explore, book, and enjoy exquisite meals at
+                        top-rated restaurants.
+                    </p>
+                </div>
+                <!-- Quick Links Column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
+                    <a href="/" class="text-white text-decoration-none me-3">Home</a>
+                    <a href="#footer" class="text-white text-decoration-none me-3">Contact</a>
+                    <a href="#reviews" class="text-white text-decoration-none me-3">Review</a>
+                    <a href="#restaurant" class="text-white text-decoration-none me-3">Restaurant</a>
+                </div>
+                <!-- Contact Info Column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+                    <address><i class="fas fa-home me-2"></i>1234 Street Name, City, Country</address>
+                    <a href="mailto:moiz05366@gmail.com" class="text-decoration-none text-white d-block"><i
+                            class="fas fa-envelope me-2"></i>moiz05366@gmail.com</a>
+                    <a href="tel:+1234567890" class="text-decoration-none text-white"><i
+                            class="fas fa-phone me-2 mt-3"></i>+123 456 7890</a>
+                </div>
+                <!-- Social Media Column -->
+                <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Follow Us</h5>
+                    <a href="#" class="text-white me-3 footer-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3 footer-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3 footer-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-3 footer-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <hr class="mb-4" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>
+                        © 2025 All rights reserved by:
+                        <a href="#" class="text-warning text-decoration-none"><strong>Restaurant Finder</strong></a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white footer-icon" style="font-size: 23px;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white footer-icon" style="font-size: 23px;">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white footer-icon" style="font-size: 23px;">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white footer-icon" style="font-size: 23px;">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
 </body>

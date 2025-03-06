@@ -64,3 +64,11 @@ function onSubmitHandler() {
     }
     reader.readAsDataURL(imageEl);
 }
+
+function logout() {
+    localStorage.setItem("login", false);
+    notyf.success("logout successful.");
+    setTimeout(function () {
+        location = "/admin/login";
+    }, 1000);
+}

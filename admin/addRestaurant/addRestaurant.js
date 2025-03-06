@@ -1,30 +1,30 @@
 const notyf = new Notyf();
 AOS.init();
 const restaurants = JSON.parse(localStorage.getItem("restaurants")) || [];
-function getIdfromURL () {
+function getIdfromURL() {
     const params = new URLSearchParams(location.search);
     return params.get("id");
 }
 
-function findRestaurantById (id) {
+function findRestaurantById(id) {
 
 }
-if(getIdfromURL()) {
+if (getIdfromURL()) {
     console.log("true");
 }
 
 // set data in local storage.
-    function Restaurant(name, desc, location, rating, img, contactNumber, isDelivery) {
-        this.name = name;
-        this.desc = desc;
-        this.location = location;
-        this.rating = rating;
-        this.img = img;
-        this.contactNumber = contactNumber;
-        this.isDelivery = isDelivery;
-        this.id = Date.now();
-        this.dishes = [];
-    }
+function Restaurant(name, desc, location, rating, img, contactNumber, isDelivery) {
+    this.name = name;
+    this.desc = desc;
+    this.location = location;
+    this.rating = rating;
+    this.img = img;
+    this.contactNumber = contactNumber;
+    this.isDelivery = isDelivery;
+    this.id = Date.now();
+    this.dishes = [];
+}
 
 // set data in local storage
 function setDataInLS(key, value) {
@@ -94,4 +94,12 @@ function onSubmitHandler() {
             window.location.href = "/admin/addDish/";
         }, 1000);
     }
+}
+
+function logout() {
+    localStorage.setItem("login", false);
+    notyf.success("logout successful.");
+    setTimeout(function () {
+        location = "/admin/login";
+    }, 1000);
 }

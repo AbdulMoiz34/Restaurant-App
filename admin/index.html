@@ -17,15 +17,21 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 position-sticky top-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 position-sticky top-0 z-2">
         <div class="container">
             <a class="navbar-brand" href="/admin">Admin Panel</a>
             <div>
-                <a href="./addRestaurant/index.html" class="text-white text-decoration-none btn-dark btn">Add
-                    Restaurant</a>
-                <a href="./addDish/index.html" class="text-white text-decoration-none btn btn-dark">Add Dishes</a>
-                <button class="btn btn-danger">Logout</button>
+                <i class="fa-solid fa-bars nav-icon d-none"></i>
+                <div class="nav-items">
+                    <a href="/admin/addRestaurant/index.html" class="text-white text-decoration-none me-3">Add
+                        Restaurant</a>
+                    <a href="/admin/addDish/index.html" class="text-white text-decoration-none me-3">Add Dishes</a>
+                    <button class="btn btn-danger" onclick="logout()">Logout</button>
+                </div>
             </div>
+
+        </div>
+        <div>
         </div>
     </nav>
     <div class="container admin-container">
@@ -40,8 +46,7 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody class="restaurants-table">
-            </tbody>
+            <tbody class="restaurants-table"></tbody>
         </table>
     </div>
 
