@@ -3,6 +3,29 @@ AOS.init();
 const navIcon = document.querySelector(".nav-icon");
 const restaurants = JSON.parse(localStorage.getItem("restaurants")) || [];
 const restaurantList = document.querySelector("#restaurant-list");
+const notyf = new Notyf({
+    types: [
+        {
+            type: "success",
+            background: "var(--primary-color)"
+        }
+    ]
+});
+
+
+//logout handler
+const isLogin = localStorage.getItem("currentUser");
+if (isLogin) {
+    document.querySelector(".login-box").innerHTML = `<button onclick="logout()" class="btn btn-danger">Logout</button>`;
+}
+
+function logout() {
+    localStorage.removeItem("currentUser");
+    notyf.success("logout successful.");
+    setTimeout(() => {
+        location = "/user/login";
+    }, 1000);
+}
 
 
 // Navbar icon click handler
@@ -83,7 +106,7 @@ const swiper = new Swiper('.mySwiper', {
 });
 
 function DisplayRestaurants() {
-    restaurantList.innerHTML  = "";
+    restaurantList.innerHTML = "";
     for (let res of restaurants) {
         restaurantList.innerHTML += `<div class="col-lg-4 col-md-6" data-aos="fade-up">
     <div class="card restaurant-card shadow-sm">

@@ -9,6 +9,7 @@ function Dish(name, price, desc, image) {
     this.desc = desc;
     this.price = price;
     this.image = image;
+    this.id = Date.now();
 }
 
 // find restaurant from restaurants by id

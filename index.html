@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Notyf CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 position-sticky top-0 z-2">
         <div class="container">
-            <a class="navbar-brand" href="#">Restaurant Finder</a>
+            <a class="navbar-brand" href="/">Restaurant Finder</a>
             <div>
                 <i class="fa-solid fa-bars nav-icon d-none"></i>
                 <div class="nav-items">
@@ -24,11 +26,13 @@
                     <a href="#restaurant" class="text-white text-decoration-none me-3">Restaurant</a>
                     <a href="#reviews" class="text-white text-decoration-none me-3">Review</a>
                     <a href="#footer" class="text-white text-decoration-none me-3">Contact</a>
+                    <div class="login-box d-inline-block">
+                        <a href="/user/login" class="text-white w-100 d-inline-block">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-        </div>
-        <div>
         </div>
     </nav>
 
@@ -245,6 +249,8 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Notyf JS -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script src="app.js"></script>
 </body>
 

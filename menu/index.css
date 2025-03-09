@@ -102,6 +102,25 @@ nav.navbar .navbar-brand {
     font-size: 18px;
     text-align: left;
     padding: 15px;
+    position: relative;
+}
+
+.check-out-btn>.cart-badge {
+    position: absolute;
+    font-size: 10px;
+    background-color: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    right: 10px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-out-btn:hover .cart-badge {
+    color: #fff;
 }
 
 .check-out-btn:hover {
@@ -133,7 +152,7 @@ footer {
 }
 
 .product-list {
-    height: 70%;
+    height: 45%;
     overflow: auto;
     padding: 10px;
 }
@@ -160,6 +179,21 @@ footer {
     background-color: transparent;
     padding: 4px;
     text-align: center;
+}
+
+.order-now-btn {
+    background-color: var(--primary-color) !important;
+}
+
+.order-now-btn:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .check-out-btn {
+        width: 60px !important;
+
+    }
 }
 
 @media (min-width: 1025px) {
