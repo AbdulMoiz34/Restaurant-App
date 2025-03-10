@@ -5,7 +5,7 @@ function displayOrders() {
     orderList.innerHTML = "";
     for (let i = orders?.length - 1; i >= 0; i--) {
         let item = orders[i];
-        const totalPrice = item.orders.reduce((accumalator, current) => accumalator + Number(current.price), 0);
+        const totalPrice = item.orders.reduce((accumalator, current) => accumalator + Number(current.price * current.quantity), 0);
         const dishes = item.orders;
         orderList.innerHTML += `<div class="order-card">
             <h5>Order #${item.id}</h5>
