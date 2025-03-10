@@ -233,6 +233,7 @@ document.querySelector(".order-now-btn").addEventListener("click", function () {
         };
         orders.push(order);
         localStorage.setItem("orders", JSON.stringify(orders));
+        localStorage.setItem("shoppingCarts", JSON.stringify([]));
         setTimeout(() => location = "/checkout", 500);
     }
 })

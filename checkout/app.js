@@ -39,7 +39,7 @@ const userOrders = orders.filter(item => item.email === currentUser.email);
 function displayOrders() {
     const orderList = document.querySelector(".order-list");
     for (let item of userOrders) {
-        const totalPrice = item.orders.reduce((accumalator, current) => accumalator + Number(current.price), 0);
+        const totalPrice = item.orders.reduce((accumalator, current) => accumalator + Number(current.price * current.quantity), 0);
         const dishes = item.orders;
         console.log();
 

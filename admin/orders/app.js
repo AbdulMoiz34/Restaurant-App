@@ -16,7 +16,7 @@ function displayOrders() {
             <p><strong>Time:</strong> ${new Date(item.date).toLocaleTimeString()}</p>
             <p>
                 <strong>Status:</strong>
-                <span class="order-badge status-pending" id="status-${item.id}">${item.status}</span>
+                <span class="order-badge status-${item.status.toLowerCase()}" id="status-${item.id}">${item.status}</span>
             </p>
             <p><strong>Total:</strong> Rs.${totalPrice + 200}</p>
             <div class="mb-3">
@@ -67,16 +67,15 @@ function handleUpdateStatus(orderId) {
 
 
 function filterOrders(type) {
-    if (type == "all") {
-        return displayOrders();
-    }
     orderList.innerHTML = "";
     const filteredOrders = orders.filter(item => item.status.toLowerCase() == type);
-    console.log(filteredOrders);
     const navItems = document.querySelectorAll(".order-filter-nav .nav-link");
     navItems.forEach(el => el.classList.remove("active"));
     event.target.classList.add("active");
-
+    if (type == "all") {
+        return displayOrders();
+    }
+    console.log(filteredOrders);
     if (!filteredOrders.length) {
         return orderList.innerHTML = `<div class="text-center">No Orders are available.</div>`;
     }
@@ -84,7 +83,7 @@ function filterOrders(type) {
     for (let i = filteredOrders?.length - 1; i >= 0; i--) {
         let item = filteredOrders[i];
 
-        const totalPrice = item.orders.reduce((accumalator, current) => accumalator + Number(current.price), 0);
+        const totalPrice = item.orders.reduce((accumalator, current) => accumalator + Number(current.price * current.quantity), 0);
         const dishes = item.orders;
         orderList.innerHTML += `<div class="order-card">
             <h5>Order #${item.id}</h5>

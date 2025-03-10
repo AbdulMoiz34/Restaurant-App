@@ -28,13 +28,13 @@ function DisplayRestaurants() {
                         <i class="fas fa-edit text-warning" onclick="editRestaurant(${res.id})"></i>
                         <i class="fas fa-trash text-danger" onclick="deleteRestaurant(${res.id})"></i>
                     </td>
+                    <td><button class="btn bg-black text-white" onclick="viewDishesHandler(${res.id})">View Dishes</button></td>
                 </tr>`;
     }
 }
 
 function editRestaurant(id) {
     const restaurant = findRestaurantById(id);
-    console.log(findRestaurantById(id));
     Swal.fire({
         title: 'Edit Restaurant',
         html: `
@@ -98,5 +98,46 @@ function logout() {
     setTimeout(function () {
         location = "/admin/login";
     }, 1000);
+}
+let restaurant;
+function viewDishesHandler(id) {
+    const dishContainer = document.querySelector(".dish-container");
+    const dishesTable = document.querySelector(".dishes-table");
+    dishesTable.innerHTML = ``;
+    restaurant = findRestaurantById(id);
+    const dishes = restaurant.dishes;
+    if (!dishes.length) {
+        document.querySelector(".empty-dish-notify").classList.remove("d-none");
+        dishContainer.classList.add("d-none");
+        return;
+    }
+    document.querySelector(".empty-dish-notify").classList.add("d-none");
+    for (let i = 0; i < dishes.length; i++) {
+        const dish = dishes[i];
+        dishesTable.innerHTML += `
+        <tr>    
+                 <td>${i + 1}</td> 
+                    <td>${dish.name}</td>
+                    <td>${dish.desc?.length > 20 ? dish.desc.slice(0, 20) + "..." : dish.desc}</td>
+                    <td>${dish.price}</td>
+                    <td>${restaurant.name}</td>
+                    <td class="action-icons">
+                        <i class="fas fa-edit text-warning" onclick=""></i>
+                        <i class="fas fa-trash text-danger" onclick="deleteDish(${dish.id})"></i>
+                        </td>
+                </tr>`;
+    }
+    dishContainer.classList.remove("d-none");
+}
+
+function deleteDish(dishId) {
+    const dishes = restaurant.dishes;
+    console.log(dishes);
+    const findIdx = dishes.findIndex(dish => dish.id == dishId);
+    dishes.splice(findIdx, 1);
+    localStorage.setItem("restaurants", JSON.stringify(restaurants));
+    console.log(restaurant);
+    event.target.closest("tr").remove();
+    notyf.success("Dish has been deleted.");
 }
 DisplayRestaurants();
