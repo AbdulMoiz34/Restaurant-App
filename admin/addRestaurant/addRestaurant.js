@@ -80,7 +80,6 @@ function onSubmitHandler() {
         notyf.error("Enter Restaurant no.");
         return;
     }
-    const img = URL.createObjectURL(imgFile);
     const reader = new FileReader();
     reader.readAsDataURL(imgFile);
     reader.onload = function (e) {
